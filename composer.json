@@ -1,0 +1,24 @@
+{
+    "name": "zarate-systems/filterable",
+    "description": "Apply filters to your Eloquent models in Laravel",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zaratedev",
+            "email": "zaratedev@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "ZarateSystems\\Filterable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZarateSystems\\Filterable\\Tests\\": "tests"
+        }
+    }
+}
