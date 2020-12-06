@@ -1,5 +1,5 @@
 {
-    "name": "zarate-systems/filterable",
+    "name": "zarate/filterable",
     "description": "Apply filters to your Eloquent models in Laravel",
     "type": "package",
     "license": "MIT",
@@ -9,16 +9,25 @@
             "email": "zaratedev@gmail.com"
         }
     ],
-    "require": {},
-    "require-dev": {},
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
     "autoload": {
         "psr-4": {
-            "ZarateSystems\\Filterable\\": "src/"
+            "Zarate\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZarateSystems\\Filterable\\Tests\\": "tests"
+            "Zarate\\Tests\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     }
 }
