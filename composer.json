@@ -1,5 +1,5 @@
 {
-    "name": "zarate/laravel-filterable",
+    "name": "zaratesystems/laravel-filterable",
     "description": "Apply filters to your Eloquent models in Laravel",
     "type": "package",
     "license": "MIT",
