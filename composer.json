@@ -14,6 +14,7 @@
         "illuminate/support": "^6.0"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-master",
         "orchestra/testbench": "^4.0",
         "phpunit/phpunit": "^8.0"
     },
