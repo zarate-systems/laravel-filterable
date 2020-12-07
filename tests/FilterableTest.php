@@ -2,19 +2,37 @@
 
 namespace Zarate\Tests;
 
-use Orchestra\Testbench\TestCase;
+use Illuminate\Support\Facades\Hash;
+use Zarate\Tests\Models\User;
 
 class FilterableTest extends TestCase
 {
-    public function test_can_filter()
+    public function test_can_filter_users()
     {
-        $this->withoutExceptionHandling();
-        $john = User::create(['name' => 'john']);
-        $ellie = User::create(['name' => 'ellie']);
+        User::create($this->attributes(['name' => 'jonathan']));
+        User::create($this->attributes(['name' => 'ellie']));
 
-        $response = $this->get('users/q=john');
-        $response->assertCollectionView('users')
-            ->contains($john)
-            ->noContains($ellie);
+        $this->get('users?name=jonathan')
+            ->assertJsonFragment([
+                [
+                    'id' => 1,
+                    'name' => 'jonathan',
+                ]
+            ])
+            ->assertJsonMissing([
+                [
+                    'id' => 2,
+                    'name' => 'ellie',
+                ]
+            ]);
+    }
+
+    protected function attributes(array $overrides = [])
+    {
+        return array_merge([
+            'name' => 'User Test',
+            'email' => "{$overrides['name']}@test.com",
+            'password' => Hash::make('password'),
+        ], $overrides);
     }
 }

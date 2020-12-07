@@ -1,1 +1,12 @@
-/vendor/
+# Composer
+composer.phar
+/build
+/vendor
+composer.lock
+.phpunit.result.cache
+
+# OS
+.DS_Store
+Thumbs.db
+.idea/
+.tags

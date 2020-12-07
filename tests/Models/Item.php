@@ -1,13 +1,15 @@
 <?php
 
-namespace Zarate\Tests;
+namespace Zarate\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Zarate\Filterable;
 
-class User extends Model
+class Item extends Model
 {
     use Filterable;
 
     protected $fillable = ['name'];
+
+    public $timestamps = false;
 }
