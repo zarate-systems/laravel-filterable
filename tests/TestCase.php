@@ -1,13 +1,14 @@
 <?php
 
-namespace Zarate\Tests;
+namespace Zarate\Filterable\Tests;
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Routing\Router;
-use Zarate\Tests\Filters\UserFilter;
-use Zarate\Tests\Models\User;
+use Orchestra\Testbench\TestCase as Orchestra;
+use Zarate\Filterable\FilterableServiceProvider;
+use Zarate\Filterable\Tests\Filters\UserFilter;
+use Zarate\Filterable\Tests\Models\User;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends Orchestra
 {
     /**
      * Setup the test environment.
@@ -19,9 +20,11 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $this->loadLaravelMigrations(['--database' => 'sqlite']);
     }
 
-    protected function tearDown(): void
+    protected function getPackageProviders($app)
     {
-        parent::tearDown();
+        return [
+            FilterableServiceProvider::class,
+        ];
     }
 
     protected function getEnvironmentSetUp($app)

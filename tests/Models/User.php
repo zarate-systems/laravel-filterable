@@ -1,9 +1,9 @@
 <?php
 
-namespace Zarate\Tests\Models;
+namespace Zarate\Filterable\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Zarate\Filterable;
+use Zarate\Filterable\Filterable;
 
 class User extends Model
 {

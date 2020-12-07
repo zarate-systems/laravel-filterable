@@ -1,6 +1,6 @@
 <?php
 
-namespace Zarate\Console;
+namespace Zarate\Filterable\Console;
 
 use Illuminate\Console\GeneratorCommand;
 
@@ -11,14 +11,7 @@ class FilterCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:filter';
-
-    /**
-     * The type of class being generated.
-     *
-     * @var string
-     */
-    protected $type = 'class';
+    protected $name = 'make:filter';
 
     /**
      * The console command description.
@@ -27,9 +20,16 @@ class FilterCommand extends GeneratorCommand
      */
     protected $description = 'Create a new filter class';
 
+    /**
+     * The type of class being generated.
+     *
+     * @var string
+     */
+    protected $type = 'Filter';
+
     protected function getStub()
     {
-        return app_path().'/Console/Stubs/custom-filter.stub';
+        return __DIR__ . '/stubs/custom-filter.php.stub';
     }
 
     /**
@@ -40,6 +40,24 @@ class FilterCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Filters';
+        return $rootNamespace . '\Filters';
+    }
+
+    public function handle()
+    {
+        parent::handle();
+
+        $this->doOtherOperations();
+    }
+
+    protected function doOtherOperations()
+    {
+        $class = $this->qualifyClass($this->getNameInput());
+
+        $path = $this->getPath($class);
+
+        $content = file_get_contents($path);
+
+        file_put_contents($path, $content);
     }
 }

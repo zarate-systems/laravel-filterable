@@ -1,6 +1,6 @@
 <?php
 
-namespace Zarate;
+namespace Zarate\Filterable;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;

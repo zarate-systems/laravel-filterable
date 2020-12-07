@@ -1,9 +1,9 @@
 <?php
 
-namespace Zarate\Tests;
+namespace Zarate\Filterable\Tests;
 
 use Illuminate\Support\Facades\Hash;
-use Zarate\Tests\Models\User;
+use Zarate\Filterable\Tests\Models\User;
 
 class FilterableTest extends TestCase
 {

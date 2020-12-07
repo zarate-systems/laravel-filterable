@@ -20,15 +20,22 @@
     },
     "autoload": {
         "psr-4": {
-            "Zarate\\": "src"
+            "Zarate\\Filterable\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Zarate\\Tests\\": "tests"
+            "Zarate\\Filterable\\Tests\\": "tests"
         }
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zarate\\Filterable\\FilterableServiceProvider"
+            ]
+        }
     }
 }

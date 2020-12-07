@@ -1,10 +1,10 @@
 <?php
 
-namespace {{ namespace }};
+namespace DummyNamespace;
 
-use Zarate\QueryFilters;
+use Zarate\Filterable\QueryFilters;
 
-class {{ class }} extends QueryFilters
+class DummyClass extends QueryFilters
 {
     /**
     * Filter by name.

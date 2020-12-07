@@ -1,8 +1,8 @@
 <?php
 
-namespace Zarate\Tests\Filters;
+namespace Zarate\Filterable\Tests\Filters;
 
-use Zarate\QueryFilters;
+use Zarate\Filterable\QueryFilters;
 
 class UserFilter extends QueryFilters
 {

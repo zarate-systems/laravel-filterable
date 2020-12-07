@@ -1,8 +1,9 @@
 <?php
 
-namespace Zarate;
+namespace Zarate\Filterable;
 
 use Illuminate\Support\ServiceProvider;
+use Zarate\Filterable\Console\FilterCommand;
 
 class FilterableServiceProvider extends ServiceProvider
 {
@@ -12,16 +13,9 @@ class FilterableServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            // Registering package commands.
-            $this->commands([]);
+            $this->commands([
+                FilterCommand::class,
+            ]);
         }
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
-        //
     }
 }
