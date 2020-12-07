@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+use Zarate\QueryFilters;
+
+class {{ class }} extends QueryFilters
+{
+    /**
+    * Filter by name.
+    *
+    * @param  string  $name
+    * @return \Illuminate\Database\Eloquent\Builder
+    */
+    public function name(string $name)
+    {
+        return $this->builder->where('name', $name);
+    }
+}
