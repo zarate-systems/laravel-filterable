@@ -83,9 +83,6 @@ Example http request for filter users by name.
 http://your-aplication.test/users?name=john
 ```
 
-## App demo
-You can see the app demo in this URL: 
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
