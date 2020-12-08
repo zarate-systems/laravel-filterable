@@ -1,4 +1,7 @@
 # Laravel Filterable
+[![Github Actions](https://github.com/zarate-systems/laravel-filterable/workflows/PHPUnit%20tests/badge.svg)](https://github.com/zarate-systems/laravel-filterable/actions)
+[![Total Downloads](https://poser.pugx.org/zaratesystems/laravel-filterable/downloads)](https://packagist.org/packages/zaratesystems/laravel-filterable)
+
 Apply filters to your Eloquent models in Laravel.
 
 ## Installation
