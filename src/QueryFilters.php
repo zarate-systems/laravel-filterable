@@ -53,7 +53,7 @@ abstract class QueryFilters
             if (Str::length($value)) {
                 $this->$name($value);
             } else {
-                $this->name();
+                $this->$name();
             }
         }
 
