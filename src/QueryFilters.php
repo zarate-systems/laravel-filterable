@@ -50,11 +50,7 @@ abstract class QueryFilters
                 continue;
             }
 
-            if (Str::length($value)) {
-                $this->$name($value);
-            } else {
-                $this->$name();
-            }
+            $this->$name(Str::length($value) ? $value : '');
         }
 
         if (! empty($defaults)) {
