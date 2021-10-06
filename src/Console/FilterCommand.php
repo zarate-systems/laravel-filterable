@@ -42,22 +42,4 @@ class FilterCommand extends GeneratorCommand
     {
         return $rootNamespace . '\Filters';
     }
-
-    public function handle()
-    {
-        parent::handle();
-
-        $this->doOtherOperations();
-    }
-
-    protected function doOtherOperations()
-    {
-        $class = $this->qualifyClass($this->getNameInput());
-
-        $path = $this->getPath($class);
-
-        $content = file_get_contents($path);
-
-        file_put_contents($path, $content);
-    }
 }
